@@ -80,7 +80,40 @@ body{
     color:#555;
 }
 
+/* for flag */
+/* Select Container */
+
+/* Country Flag */
+.select-container img{
+    width: 35px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.select-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.select-container:focus-within{
+    border-color: #4facfe;
+}
+
 .currency-box select{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    cursor: pointer;
+}
+/* .currency-box select{
     width:100%;
     padding:12px;
     border:2px solid #ddd;
@@ -93,7 +126,7 @@ body{
 
 .currency-box select:focus{
     border-color:#4facfe;
-}
+} */
 
 /* Swap Button */
 #swapBtn{
@@ -168,6 +201,67 @@ body{
     font-size:14px;
 }
 
+/* ==========================
+   Conversion History
+========================== */
+
+.history-box{
+    margin-top: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid #e0e0e0;
+}
+
+.history-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.history-header h2{
+    font-size: 20px;
+    color: #333;
+}
+
+#clearHistoryBtn{
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#clearHistoryBtn:hover{
+    background: #e63939;
+}
+
+#historyList{
+    list-style: none;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+#historyList li{
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #4facfe;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+}
+
+#historyList li:last-child{
+    margin-bottom: 0;
+}
+
 /* Error Message */
 #errorMessage{
     text-align:center;
@@ -197,4 +291,13 @@ body{
     #swapBtn:hover{
         transform:none;
     }
+
+    .history-header{
+    flex-direction: column;
+    gap: 10px;
+}
+
+#clearHistoryBtn{
+    width: 100%;
+}
 }
